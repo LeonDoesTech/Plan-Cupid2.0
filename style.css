@@ -522,7 +522,7 @@ input[type="range"] {
     font-weight: 500;
 }
 
-/* ------------------ MOBILE RESPONSIVENESS ------------------ */
+/* ---------- MOBILE LAYOUT FIX ---------- */
 @media (max-width: 1024px) {
     .letter-container {
         flex-direction: column;
@@ -530,26 +530,42 @@ input[type="range"] {
 
     .customization-panel {
         width: 100%;
+        max-width: 100%;
         order: 2;
-    }
-
-    .customization-panel.collapsed {
-        transform: translateY(100%);
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 60vh;
-        z-index: 1000;
+        position: relative;
+        transform: none !important;
     }
 
     .letter-preview {
         order: 1;
         padding: 1rem;
+        width: 100%;
     }
 
     .letter-content {
+        width: 100%;
         padding: 2rem;
+        max-width: 100%;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea,
+    .map-btn {
+        width: 100% !important;
+    }
+
+    .template-options {
+        grid-template-columns: 1fr !important;
+    }
+
+    .panel-actions {
+        flex-direction: column;
     }
 }
 
@@ -559,16 +575,16 @@ input[type="range"] {
     }
 
     .header {
-        padding: 1.5rem;
+        padding: 1rem;
         margin-bottom: 1rem;
     }
 
     .header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .date-form {
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     .form-section {
@@ -576,52 +592,39 @@ input[type="range"] {
         margin-bottom: 1rem;
     }
 
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-    }
-
     .letter-content {
-        padding: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .letter-header h1 {
-        font-size: 2rem;
-    }
-
-    .customization-panel {
-        height: 70vh;
-    }
-
-    .panel-content {
         padding: 1rem;
     }
 
-    .template-options {
-        grid-template-columns: 1fr;
+    .letter-header h1 {
+        font-size: 1.6rem;
     }
 
-    .panel-actions {
-        flex-direction: column;
+    .map-btn {
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .header h1 {
-        font-size: 1.8rem;
+    .letter-header h1 {
+        font-size: 1.5rem;
     }
 
-    .letter-header h1 {
-        font-size: 1.8rem;
+    .header h1 {
+        font-size: 1.5rem;
     }
 
     .letter-content {
-        padding: 1rem;
+        padding: 0.8rem;
+        margin-bottom: 0.8rem;
     }
 
     .detail-item {
-        padding: 0.75rem;
+        padding: 0.5rem;
+    }
+
+    input[type="range"] {
+        width: 100%;
     }
 
     .modal-content {
@@ -631,13 +634,5 @@ input[type="range"] {
 
     .modal-body {
         padding: 1rem;
-    }
-
-    .map-btn {
-        width: 100%;
-    }
-
-    input[type="range"] {
-        width: 100%;
     }
 }
